@@ -15,15 +15,15 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
 
         setContent {
-            // 1. Buat variabel baru untuk koordinat Universitas Negeri Padang
-            val universitasNegeriPadang = LatLng(-0.9143, 100.3543)
+            // PERBAIKAN FINAL: Menggunakan koordinat yang Anda berikan.
+            val universitasNegeriPadang = LatLng(-0.8972, 100.3502)
 
             val cameraPositionState = rememberCameraPositionState {
-                // 2. Arahkan kamera langsung ke lokasi UNP
+                // Arahkan kamera langsung ke lokasi UNP
                 position = CameraPosition.fromLatLngZoom(universitasNegeriPadang, 15f) // Zoom lebih dekat (misal: 15f)
             }
 
-            // 3. Gunakan variabel 'universitasNegeriPadang' untuk posisi marker
+            // Gunakan variabel 'universitasNegeriPadang' untuk posisi marker
             val markerState = rememberMarkerState(position = universitasNegeriPadang)
 
             GoogleMap(
